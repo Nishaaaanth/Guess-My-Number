@@ -7,14 +7,19 @@ let box = document.querySelector("#secret-number");
 let highscore = document.querySelector("#highscore");
 let score = document.querySelector("#score");
 const again = document.querySelector("#again");
+let prevHigh = 0;
+let high = 0;
 
-check.addEventListener("click", () => {
+function checker() {
     if (guess.value == secretNumber) {
         title.textContent = "You Guessed it Right!";
         comment.textContent = "Numbers Match tbh";
         box.textContent = secretNumber;
-        highscore.textContent = score.textContent;
+        high = score.textContent;
+        if(high > prevHigh) highscore.textContent = high;
+        else highscore.textContent = prevHigh;
         guess.setAttribute("maxlength", "0");
+        prevHigh = high;
     }
     else if (guess.value == "" || isNaN(guess.value)) {
         title.textContent = "Guess My Number!";
@@ -30,13 +35,17 @@ check.addEventListener("click", () => {
         comment.textContent = "lil more than that";
         score.textContent = score.textContent - 1;
     }
+}
+
+check.addEventListener("click", checker);
+guess.addEventListener("keyup", (e)=>{
+    if(e.key == "Enter") checker();
 });
 
 again.addEventListener("click", () => {
     title.textContent = "Guess My Number!";
     comment.textContent = "No Numbers Yet!";
     score.textContent = "20";
-    highscore.textContent = "0";
     guessbox.value = "";
     secretNumber = Math.trunc(Math.random() * 20 + 1);
     box.textContent = "?";

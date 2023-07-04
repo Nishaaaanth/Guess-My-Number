@@ -133,3 +133,54 @@ input[type="text"] {
     top: 50%;
     z-index: -1;
 }
+
+@media screen and (max-width: 480px) {
+    * {
+        font-size: 11px;
+    }
+
+    header {
+        width: 100vw;
+        padding: 2rem;
+        height: 10vh;
+    }
+
+    main {
+        height: 80vh;
+    }
+
+    button {
+        height: calc(0.45 * var(--size));
+        width: var(--size);
+        padding: 7px 4px;
+    }
+
+    footer {
+        height: 5.6vh;
+        width: 100vw;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .dynamic-text {
+        height: 10rem;
+        align-items: center;
+    }
+
+    #help {
+        padding: 1rem 1rem;
+    }
+
+    main .footer {
+        flex-direction: column;
+    }
+
+    #title {
+        font-size: 15px;
+    }
+
+    #line {
+        translate: 0 -12rem;
+    }
+}
