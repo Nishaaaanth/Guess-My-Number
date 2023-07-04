@@ -44,17 +44,19 @@ main .main{
 
 #title {
     font-size: 2rem;
+    padding: 0 1rem;
 }
 
 #secret-number {
     font-size: 5rem;
     border: 2px black solid;
     height: 8rem;
-    width: 6rem;
+    width: 10rem;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: yellow;
 }
 
 .guesser {
@@ -78,6 +80,7 @@ main .footer{
     padding: 1rem 0;
     justify-content: space-between;
     margin-top: 5rem;
+    gap: 2rem;
 }
 
 footer {
@@ -101,6 +104,9 @@ button {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    background-color: lightgreen;
+    padding: 12px 12px;
+    border: 2px solid black;
 }
 
 #help {
@@ -117,4 +123,13 @@ input[type="text"] {
     font-size: 1rem;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
+}
+
+#line {
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 100vw;
+    top: 50%;
+    z-index: -1;
 }

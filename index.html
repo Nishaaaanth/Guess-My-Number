@@ -26,16 +26,18 @@
             <div id="secret-number">?</div>
         </div>
 
+        <div id="line"></div>
+
         <div class="footer">
             <div class="guesser">
-                <input type="text" id="guessbox"></input>
+                <input type="text" id="guessbox" maxlength="2"></input>
                 <button id="checkbox">Check!</button>
             </div>
 
             <div class="dynamic-text">
                 <div id="comment">No Numbers Yet!</div>
-                <div id="score">Score: 20</div>
-                <div id="highscore">Highscore: 0</div>
+                <div>Score: <span id="score">20</span></div>
+                <div>Highscore: <span id="highscore">0</span></div>
             </div>
         </div>
     </main>
